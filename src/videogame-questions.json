@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dqt-537",
+    "question": "Qual foi o primeiro videogame?",
+    "options": [
+      "Atari",
+      "Magnavox Odyssey",
+      "Master System",
+      "Saturn"
+    ],
+    "correctOption": 1,
+    "points": 10
+  },
+  {
+    "id": "rod-395",
+    "question": "Qual o videogame com mais jogos no mercado?",
+    "options": [
+      "Xbox 360",
+      "Nintendo DS",
+      "Super Nintendo",
+      "PlayStation 2 (PS2)"
+    ],
+    "correctOption": 3,
+    "points": 10
+  },
+  {
+    "id": "hdj-917",
+    "question": "Qual foi o jogo mais vendido da história?",
+    "options": [
+      "Minecraft",
+      "Tetris",
+      "Super Mario Bros",
+      "Grand Theft Auto V"
+    ],
+    "correctOption": 0,
+    "points": 10
+  },
+  {
+    "id": "dyh-293",
+    "question": "Qual o primeiro jogo lançado?",
+    "options": [
+      "Winner",
+      "Gotcha!",
+      "Pong!",
+      "Space Race"
+    ],
+    "correctOption": 2,
+    "points": 10
+  },
+  {
+    "id": "odl-847",
+    "question": "Qual foi o primeiro jogo em que o Mario apareceu?",
+    "options": [
+      "Donkey Kong",
+      "Super Mario Bros.",
+      "Mario Kart",
+      "Spider-man"
+    ],
+    "correctOption": 0,
+    "points": 10
+  }
+]
