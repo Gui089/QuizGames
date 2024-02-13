@@ -48,6 +48,10 @@ body {
   margin-right: 1rem;
 }
 
+ul {
+  list-style: none;
+}
+
 img {
   width: 14rem;
 }

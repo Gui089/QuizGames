@@ -1,37 +1,43 @@
+import { useEffect, useReducer } from 'react';
+
+const reducer = (state, action) => {
+  if(action.type === 'set_api_data') {
+    return {...state, apiData: action.apiData}
+  }
+
+  return state;
+}
+
+
 const App = () => {
-  const questions = [
-    {
-      question: 'Qual foi o primeiro video game lançado ?',
-      true: 'Magnavox Odyssey',
-      b:'Atari',
-      c:'Master System',
-      d:'Saturn'
-    },
-  ]
+  const [state, dispatch] = useReducer(reducer, {currentQuestion: 0, apiData: []});
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/Roger-Melo/fake-data/main/videogame-questions.json')
+      .then(response => response.json())
+      .then(apiData => dispatch({type: 'set_api_data', apiData}))
+      .catch(error => alert(error.message));
+  }, []);
 
   return (
-    <>
-      <div className='app-header'>
-         <h1>Quiz dos Games</h1>
-      </div>
-      <div className='app'>
-         <ul>
-           {
-             questions.map(question => (
-               <>
-                  <h2 className=''>{question.question}</h2>
-                  <li className='options btn btn-option'>{question.true}</li>
-                  <li className='options btn btn-option'>{question.b}</li>
-                  <li className='options btn btn-option'>{question.c}</li>
-                  <li className='options btn btn-option'>{question.d}</li>
-               </>
-             ))
-           }  
-         </ul>
-         <button className='btn btn-ui'>Próxima</button>
-      </div>
-    </>
-  );
-}
+    <div className='app'>
+      <main>
+        {state.apiData.length > 0 && (
+          <>
+            <h4>{state.apiData[state.currentQuestion].question}</h4>
+            <ul className='options'>
+              {state.apiData[state.currentQuestion].options.map(option => 
+                   <li key={option}><button className='btn btn-option'>{option}</button></li>)}
+            </ul>
+           <div>
+            <button className='btn btn-option'>Próxima</button>
+           </div>
+          </>
+        )}
+      </main>
+    </div>
+  )
+};
+
 
 export{ App };
