@@ -32,7 +32,13 @@ const App = () => {
             <h4>{state.apiData[state.currentQuestion].question}</h4>
             <ul className='options'>
               {state.apiData[state.currentQuestion].options.map((option, index) => 
-                   <li key={option}><button onClick={() => handleClickOption(index)} className='btn btn-option'>{option}</button></li>)}
+                   <li key={option}><button 
+                   onClick={() => handleClickOption(index)} 
+                   className={`btn btn-option ${state.clickedOption === index ? 'answer' : ''}`}
+                   disabled={state.clickedOption !== null}
+                   >{option}
+                   </button>
+                   </li>)}
             </ul>
            <div>
             <button className='btn btn-option'>Próxima</button>
